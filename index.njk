@@ -1,0 +1,39 @@
+---
+layout: layouts/main.njk
+---
+
+<div class="main hero py-20 flex items-center relative">
+
+    <div class="mr-auto">
+        <h1 class="text-5xl font-bold mb-8">The script runner <br>for Deno</h1>
+        <a href="/docs" class="bg-blue-600 hover:bg-blue-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white text-lg">
+            Get started
+        </a>
+    </div>
+
+    <div class="">
+        <svg class="chevron" width="800px" height="603.3px" viewBox="0 0 205.8 155.2">
+            <style type="text/css">
+                .st0 {
+                    fill: url(#gradient);
+                }
+            </style>
+            <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0" y1="77.5983" x2="205.8001" y2="77.5983">
+                <stop offset="0" style="stop-color:#2EAFFF"/>
+                <stop offset="1" style="stop-color:#505DDE"/>
+            </linearGradient>
+            <path class="st0" d="M205.8,19.1v117.1c0,10.5-8.5,19.1-19.1,19.1H42.5c-7.8,0-14.8-4.7-17.7-12L1.4,84.7c-1.8-4.6-1.8-9.6,0-14.2
+    L24.8,12c2.9-7.2,9.9-12,17.7-12h144.2C197.3,0,205.8,8.5,205.8,19.1z"/>
+        </svg>
+
+        <div class="terminal bg-blur dark rounded-md border border-gray-600 p-4 text-white">
+            <div class="flex mb-2">
+                <div class="w-3 h-3 mr-2 rounded-md bg-red-500"></div>
+                <div class="w-3 h-3 mr-2 rounded-md bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-md bg-green-500"></div>
+            </div>
+            <asciinema-player src="vr.cast" autoplay></asciinema-player>
+        </div>
+    </div>
+
+</div>

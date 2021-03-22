@@ -1,0 +1,20 @@
+scripts:
+
+  develop:
+    desc: Starts the development server
+    cmd:
+      pll:
+        - lume --serve
+        - vr build-styles
+
+  build:
+    desc: Builds for production
+    cmd:
+      - lume
+      - vr build-styles
+    env:
+      NODE_ENV: production
+
+  build-styles:
+    desc: Builds Tailwind styles
+    cmd: npx tailwindcss-cli@latest build static/css/styles.css -c ./tailwind.config.js -o ./_site/css/styles.css
