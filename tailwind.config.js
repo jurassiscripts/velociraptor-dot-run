@@ -4,7 +4,9 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      textColor: ['group-focus'],
+    },
   },
   plugins: [],
 }

@@ -1,0 +1,77 @@
+---
+layout: layouts/main.njk
+hasMenu: true
+styles:
+  - code-theme.css
+scripts:
+  - menu.js
+---
+
+<div class="main flex mt-12 pt-12">
+
+    <nav id="menu" class="sidebar">
+      <div class="md:sticky md:top-20">
+        <ul class="scroll-wrapper overflow-y-auto">
+          {% for groupId, groupPages in search.pages('type=docs') | groups %}
+            <li>
+              <h5 class="mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900">
+                {{ groups[groupId].title }}
+              </h5>
+              <ul>
+                {% for docsPage in groupPages %}
+                  <li>
+                    <a class="py-2 transition-colors duration-200 relative block hover:text-gray-900 text-gray-500"
+                       href="{{ docsPage.permalink }}">
+                      <span class="rounded-md absolute inset-0 bg-cyan-50 opacity-0"></span>
+                      <span class="relative">{{ docsPage.data.title }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+
+  <article class="flex-auto">
+
+    {{ content | safe }}
+
+    <nav class="py-8 my-8 border-gray-200 border-t">
+      <ul class="list-none flex">
+        {%- set previousPost = search.previousPage(url, 'type=docs') %}
+        {%- if previousPost %}
+          <li class="mr-auto">
+            <a class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
+               href="{{ previousPost.data.url | url }}"
+               rel="prev">
+              <i class="fas fa-arrow-left mr-6 group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
+              <div class="flex flex-col items-end">
+                <span class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Prev</span>
+                <span class="text-gray-500">{{ previousPost.data.title }}</span>
+              </div>
+            </a>
+          </li>
+        {% endif %}
+
+        {%- set nextPost = search.nextPage(url, 'type=docs') %}
+        {%- if nextPost %}
+          <li class="ml-auto">
+            <a class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
+               href="{{ nextPost.data.url | url }}"
+               rel="prev">
+              <div class="flex flex-col items-start mr-6">
+                <span class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Next</span>
+                <span class="text-gray-500">{{ nextPost.data.title }}</span>
+              </div>
+              <i class="fas fa-arrow-right group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+
+  </article>
+
+</div>

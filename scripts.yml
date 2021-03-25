@@ -4,7 +4,7 @@ scripts:
     desc: Starts the development server
     cmd:
       pll:
-        - lume --serve
+        - lume --serve --port 3333
         - vr build-styles
 
   build:
