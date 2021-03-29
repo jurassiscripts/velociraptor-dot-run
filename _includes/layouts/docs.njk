@@ -9,37 +9,38 @@ scripts:
 
 <div class="main flex mt-12 pt-12">
 
-    <nav id="menu" class="sidebar">
-      <div class="md:sticky md:top-20">
-        <ul class="scroll-wrapper overflow-y-auto">
-          {% for groupId, groupPages in search.pages('type=docs') | groups %}
-            <li>
-              <h5 class="mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900">
-                {{ groups[groupId].title }}
-              </h5>
-              <ul>
-                {% for docsPage in groupPages %}
-                  <li>
-                    <a class="py-2 transition-colors duration-200 relative block hover:text-gray-900 text-gray-500"
-                       href="{{ docsPage.permalink }}">
-                      <span class="rounded-md absolute inset-0 bg-cyan-50 opacity-0"></span>
-                      <span class="relative">{{ docsPage.data.title }}</span>
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </nav>
+  <nav id="menu" class="sidebar">
+    <div class="md:sticky md:top-20">
+      <ul class="scroll-wrapper overflow-y-auto -mx-2">
+        {% set groupsPages = search.pages('type=docs') | groups %}
+        {% for group in groups %}
+          <li {% if loop.index != 1 %}class="mt-8"{% endif %}>
+            <h5 class="px-2 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900">
+              {{ group.title }}
+            </h5>
+            <ul>
+              {% for docsPage in groupsPages[group.id] %}
+                <li>
+                  <a class="p-2 transition-colors duration-200 block hover:text-gray-900 text-gray-500 rounded {% if url == docsPage.data.url %}text-blue-500 bg-blue-50 hover:text-blue-600{% endif %}"
+                     href="{{ docsPage.data.url }}">
+                    {{ docsPage.data.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
 
-  <article class="flex-auto">
+      </ul>
+    </div>
+  </nav>
+
+  <article class="flex-auto min-w-0">
 
     {{ content | safe }}
 
     <nav class="py-8 my-8 border-gray-200 border-t">
-      <ul class="list-none flex">
+      <ul class="list-none p-0 flex">
         {%- set previousPost = search.previousPage(url, 'type=docs') %}
         {%- if previousPost %}
           <li class="mr-auto">

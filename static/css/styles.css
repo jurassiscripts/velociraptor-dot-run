@@ -66,8 +66,9 @@ article code {
   @apply font-mono text-sm inline bg-gray-200 rounded p-1;
 }
 
-article pre {
-  @apply bg-gray-100 rounded p-4;
+article pre,
+article pre.hljs {
+  @apply rounded p-6;
 }
 
 article pre code {
@@ -126,18 +127,22 @@ article td {
          -translate-x-full
          transition-all
          duration-300
+         flex-shrink-0
 
          md:static
          md:transform-none
-         md:w-1/4
+         md:w-1/5
          md:pt-6
-         md:pr-4
+         md:pr-8
+         md:mr-8
          md:pl-0
          md:shadow-none;
 }
 
-.sidebar.open {
-  @apply translate-x-0 shadow-2xl;
+@media (max-width: 768px) {
+  .sidebar.open {
+    @apply translate-x-0 shadow-2xl;
+  }
 }
 
 .sidebar .scroll-wrapper {
