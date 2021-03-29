@@ -1,0 +1,11 @@
+type: docs
+layout: layouts/docs.njk
+groups:
+  - id: getting-started
+    title: Getting started
+  - id: guides
+    title: Guides
+  - id: ides
+    title: IDE integrations
+  - id: help-support
+    title: Help and support
