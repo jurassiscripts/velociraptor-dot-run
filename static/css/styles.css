@@ -2,12 +2,20 @@
 @tailwind components;
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   @apply text-gray-600 leading-normal break-words;
 }
 
+h1, h2, h3, h4, h5, h6, .font-headings {
+  font-family: 'DM Sans', sans-serif;
+}
+
+article {
+  @apply text-gray-500 leading-7;
+}
+
 article > * + * {
-  @apply mt-0 mb-4;
+  @apply mt-0 mb-6;
 }
 
 article li + li {
@@ -39,11 +47,11 @@ article > h1:first-of-type {
 }
 
 article h2 {
-  @apply text-gray-800 leading-tight border-b text-2xl font-medium mb-4 mt-6 pb-2;
+  @apply text-gray-800 leading-tight border-b text-2xl font-medium mb-4 mt-8 pb-2;
 }
 
 article h3 {
-  @apply text-gray-800 leading-snug text-lg font-medium mb-4 mt-6;
+  @apply text-gray-800 leading-snug text-lg font-medium mb-4 mt-8;
 }
 
 article h4 {
@@ -59,11 +67,12 @@ article h6 {
 }
 
 article blockquote {
-  @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
+  @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-400;
 }
 
 article code {
-  @apply font-mono text-sm inline bg-gray-200 rounded p-1;
+  padding: 2px 4px;
+  @apply font-mono text-sm inline bg-gray-200 rounded;
 }
 
 article pre,
@@ -99,6 +108,27 @@ article td {
   @apply border py-1 px-3;
 }
 
+article .header-anchor {
+  position: absolute;
+  left: -1em;
+  opacity: 0;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+  @apply text-gray-400;
+}
+
+article h1,
+article h2,
+article h3 {
+  position: relative;
+}
+
+article h1:hover > .header-anchor,
+article h2:hover > .header-anchor,
+article h3:hover > .header-anchor {
+  opacity: 1;
+}
+
 #menu-toggle[aria-expanded=false] > .fa-bars {
   display: inline;
 }
@@ -116,6 +146,12 @@ article td {
 }
 
 .sidebar {
+  @apply font-headings
+         flex-shrink-0
+         md:pt-6;
+}
+
+#menu {
   width: 60vw;
   @apply fixed
          bg-white
@@ -127,26 +163,26 @@ article td {
          -translate-x-full
          transition-all
          duration-300
-         flex-shrink-0
 
          md:static
          md:transform-none
          md:w-1/5
-         md:pt-6
          md:pr-8
          md:mr-8
          md:pl-0
+         md:pt-6
          md:shadow-none;
 }
 
 @media (max-width: 768px) {
-  .sidebar.open {
+  #menu.open {
     @apply translate-x-0 shadow-2xl;
   }
 }
 
 .sidebar .scroll-wrapper {
   height: calc(100vh - 7.5rem);
+  @apply overflow-y-auto;
 }
 
 .bg-blur {
@@ -160,7 +196,8 @@ article td {
 }
 
 .main {
-  @apply max-w-screen-xl md:mx-auto p-4;
+  max-width: 90rem;
+  @apply md:mx-auto p-4;
 }
 
 @tailwind utilities;

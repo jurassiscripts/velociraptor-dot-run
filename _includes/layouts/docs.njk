@@ -2,16 +2,16 @@
 layout: layouts/main.njk
 hasMenu: true
 styles:
-  - code-theme.css
+- code-theme.css
 scripts:
-  - menu.js
+- menu.js
 ---
 
 <div class="main flex mt-12 pt-12">
 
   <nav id="menu" class="sidebar">
     <div class="md:sticky md:top-20">
-      <ul class="scroll-wrapper overflow-y-auto -mx-2">
+      <ul class="scroll-wrapper -mx-2">
         {% set groupsPages = search.pages('type=docs') | groups %}
         {% for group in groups %}
           <li {% if loop.index != 1 %}class="mt-8"{% endif %}>
@@ -21,8 +21,9 @@ scripts:
             <ul>
               {% for docsPage in groupsPages[group.id] %}
                 <li>
-                  <a class="p-2 transition-colors duration-200 block hover:text-gray-900 text-gray-500 rounded {% if url == docsPage.data.url %}text-blue-500 bg-blue-50 hover:text-blue-600{% endif %}"
-                     href="{{ docsPage.data.url }}">
+                  <a
+                    class="p-2 transition-colors duration-200 block hover:text-gray-900 text-gray-500 rounded {% if url == docsPage.data.url %}text-blue-500 bg-blue-50 hover:text-blue-600{% endif %}"
+                    href="{{ docsPage.data.url }}">
                     {{ docsPage.data.title }}
                   </a>
                 </li>
@@ -44,12 +45,15 @@ scripts:
         {%- set previousPost = search.previousPage(url, 'type=docs') %}
         {%- if previousPost %}
           <li class="mr-auto">
-            <a class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
-               href="{{ previousPost.data.url | url }}"
-               rel="prev">
-              <i class="fas fa-arrow-left mr-6 group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
+            <a
+              class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
+              href="{{ previousPost.data.url | url }}"
+              rel="prev">
+              <i
+                class="fas fa-arrow-left mr-6 group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
               <div class="flex flex-col items-end">
-                <span class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Prev</span>
+                <span
+                  class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Prev</span>
                 <span class="text-gray-500">{{ previousPost.data.title }}</span>
               </div>
             </a>
@@ -59,14 +63,17 @@ scripts:
         {%- set nextPost = search.nextPage(url, 'type=docs') %}
         {%- if nextPost %}
           <li class="ml-auto">
-            <a class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
-               href="{{ nextPost.data.url | url }}"
-               rel="prev">
+            <a
+              class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
+              href="{{ nextPost.data.url | url }}"
+              rel="prev">
               <div class="flex flex-col items-start mr-6">
-                <span class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Next</span>
+                <span
+                  class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Next</span>
                 <span class="text-gray-500">{{ nextPost.data.title }}</span>
               </div>
-              <i class="fas fa-arrow-right group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
+              <i
+                class="fas fa-arrow-right group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
             </a>
           </li>
         {% endif %}
@@ -74,5 +81,26 @@ scripts:
     </nav>
 
   </article>
+
+  <nav class="sidebar hidden md:block w-1/6 ml-8 pl-8">
+    <div class="sticky top-20">
+      <div class="scroll-wrapper">
+        <h5 class="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
+          On this page
+        </h5>
+        <ul class="sidebar-scroller text-gray-500">
+          {% set toc = content | toc %}
+          {% for h in toc %}
+            <li{% if h.level > 1 %} class="ml-{{ (h.level - 1) * 2 }}"{% endif %}>
+              <a href="#{{ h.anchor }}"
+                 class="block transform transition-colors duration-200 py-2 hover:text-gray-900">
+                {{ h.text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 </div>

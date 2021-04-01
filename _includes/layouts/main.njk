@@ -12,7 +12,7 @@
   {% endfor %}
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/b6a3908e9d.js" crossorigin="anonymous"></script>
   {% for script in scripts %}
     <script defer src="{{ ('/js/' + script) | url }}"></script>
@@ -33,7 +33,7 @@
       {% endif %}
       <a href="/" class="mr-auto flex items-center">
         <img src="{{ '/images/vr-logo.svg' | url }}" alt="Velociraptor Logo" class="h-8 mr-2">
-        <span class="md:block hidden text-gray-500 text-xl font-bold">Velociraptor</span>
+        <span class="md:block hidden text-gray-500 text-xl font-bold font-headings">Velociraptor</span>
       </a>
       <nav>
         <ul class="list-none flex items-center">
@@ -60,7 +60,7 @@
   <footer class="bg-gray-100 py-12">
     <div class="main flex items-center">
       <img src="{{ '/images/vr-logo.svg' | url }}" alt="Velociraptor Logo" class="h-8 md:mr-2 mr-auto">
-      <span class="md:block hidden text-gray-500 text-xl font-bold mr-auto">Velociraptor</span>
+      <span class="md:block hidden text-gray-500 text-xl font-bold mr-auto font-headings">Velociraptor</span>
       <span class="text-sm text-gray-400">@ 2021 <a href="https://github.com/jurassiscripts" target="_blank">JurassiScripts</a></span>
     </div>
   </footer>

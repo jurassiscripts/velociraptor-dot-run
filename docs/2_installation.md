@@ -56,4 +56,4 @@ The recommended installation script includes the `-A/--allow-all` flag (which gr
 version installs with the `upgrade` command and in order to allow you to write arbitrary TypeScript configuration files
 (which inherit vr's permissions when imported).
 
-> This means that your `.ts` config files are grated all permissions.
+> This means that your `.ts` config files are granted all permissions.
