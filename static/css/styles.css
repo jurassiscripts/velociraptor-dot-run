@@ -77,7 +77,7 @@ article code {
 
 article pre,
 article pre.hljs {
-  @apply rounded p-6;
+  @apply rounded-lg p-6;
 }
 
 article pre code {
@@ -148,14 +148,14 @@ article h3:hover > .header-anchor {
 .sidebar {
   @apply font-headings
          flex-shrink-0
-         md:pt-6;
+         md:mt-3;
 }
 
 #menu {
   width: 60vw;
+  z-index: 1;
   @apply fixed
          bg-white
-         pt-24
          px-4
          inset-y-0
          left-0
@@ -170,15 +170,35 @@ article h3:hover > .header-anchor {
          md:pr-8
          md:mr-8
          md:pl-0
-         md:pt-6
+         md:mt-0
          md:shadow-none;
 }
 
 @media (max-width: 768px) {
+  #menu .md\:sticky {
+    height: calc(100% - 5rem);
+    @apply mt-20;
+  }
+
+  #menu .scroll-wrapper {
+    height: 100%;
+  }
+
   #menu.open {
     @apply translate-x-0 shadow-2xl;
   }
 }
+
+.sidebar .sticky {
+  top: 100px;
+}
+
+@screen md {
+  .sidebar .md\:sticky {
+    top: 100px;
+  }
+}
+
 
 .sidebar .scroll-wrapper {
   height: calc(100vh - 7.5rem);

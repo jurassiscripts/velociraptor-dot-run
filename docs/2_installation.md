@@ -4,9 +4,7 @@ group: getting-started
 ---
 # Installation
 
-### Prerequisites
-
-A recent version of <a href="https://deno.land" target="_blank">Deno</a>.
+In order to install Velociraptor, you'll need a recent version of <a href="https://deno.land" target="_blank">Deno</a>.
 
 ## Installing from 🦕 [deno.land](https://deno.land/x/velociraptor)
 
@@ -38,7 +36,7 @@ To use Velociraptor without installing it run:
 $ deno run -qA https://code.velociraptor.run <PARAMS>
 ```
 
-> ⚠️ Some of vr's features won't work this way, see [Known limitations](/docs/known-limitations#using-another-cli-alias).
+> ℹ️️ Some of vr's features won't work this way, see [Known limitations](/docs/known-limitations/#custom-executable-names).
 
 ## Permissions
 
@@ -56,4 +54,4 @@ The recommended installation script includes the `-A/--allow-all` flag (which gr
 version installs with the `upgrade` command and in order to allow you to write arbitrary TypeScript configuration files
 (which inherit vr's permissions when imported).
 
-> This means that your `.ts` config files are granted all permissions.
+> ⚠️ This means that your `.ts` config files are granted all permissions.

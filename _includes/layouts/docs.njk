@@ -6,11 +6,12 @@ styles:
 scripts:
 - menu.js
 ---
+<div class="h-16"></div>
 
-<div class="main flex mt-12 pt-12">
+<div class="main flex pt-6">
 
   <nav id="menu" class="sidebar">
-    <div class="md:sticky md:top-20">
+    <div class="md:sticky">
       <ul class="scroll-wrapper -mx-2">
         {% set groupsPages = search.pages('type=docs') | groups %}
         {% for group in groups %}
@@ -80,10 +81,17 @@ scripts:
       </ul>
     </nav>
 
+    {% set currentPage = search.pages('url=' + url)[0] %}
+    {% if currentPage %}
+    <div class="flex">
+      <a class="ml-auto text-gray-400 hover:text-gray-500 transition-colors duration-300" target="_blank" href="https:/github.com/jurassiscripts/velociraptor-dot-run/tree/main{{ currentPage.src.path + currentPage.src.ext }}"><i class="fab fa-github"></i> Edit this page</a>
+    </div>
+    {% endif %}
+
   </article>
 
   <nav class="sidebar hidden md:block w-1/6 ml-8 pl-8">
-    <div class="sticky top-20">
+    <div class="sticky">
       <div class="scroll-wrapper">
         <h5 class="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
           On this page

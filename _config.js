@@ -1,6 +1,5 @@
 import lume from 'https://deno.land/x/lume@v0.16.3/mod.js';
 import markdownItAnchor from 'https://jspm.dev/markdown-it-anchor';
-// import { DOMParser } from 'https://deno.land/x/deno_dom@v0.1.7-alpha/deno-dom-wasm.ts';
 import cheerio from 'https://jspm.dev/cheerio';
 
 const site = lume();
