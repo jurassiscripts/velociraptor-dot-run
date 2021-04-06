@@ -42,6 +42,12 @@ body {
   .asciinema-theme-asciinema .asciinema-terminal.font-small {
     font-size: 6px;
   }
+
+  .hero .chevron {
+    width: 400px;
+    top: -18%;
+    height: auto;
+  }
 }
 
 .asciinema-player .control-bar {
