@@ -18,3 +18,9 @@ scripts:
   build-styles:
     desc: Builds Tailwind styles
     cmd: npx tailwindcss-cli@latest build static/css/styles.css -c ./tailwind.config.js -o ./_site/css/styles.css
+
+  deploy:
+    desc: Deploys to Firebase Hosting
+    cmd:
+      - vr build
+      - firebase deploy --only hosting
