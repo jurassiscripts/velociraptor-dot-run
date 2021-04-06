@@ -1,6 +1,7 @@
 ---
 title: VSCode
 group: ides
+description: Velociraptor VSCode Integration
 ---
 # VSCode integration
 

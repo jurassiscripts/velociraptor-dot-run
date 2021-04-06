@@ -1,6 +1,7 @@
 ---
 title: Installation
 group: getting-started
+description: How to install Velociraptor
 ---
 # Installation
 
@@ -9,24 +10,34 @@ In order to install Velociraptor, you'll need a recent version of <a href="https
 ## Installing from 🦕 [deno.land](https://deno.land/x/velociraptor)
 
 ```shell
-$ deno install -qAn vr https://deno.land/x/velociraptor@1.0.0-beta.18/cli.ts
+$ deno install -qAn vr https://deno.land/x/velociraptor@1.0.0/cli.ts
 ```
 
 ## Installing from 🥚 [nest.land](https://nest.land/package/velociraptor)
 
 ```shell
-$ deno install -qAn vr https://x.nest.land/velociraptor@1.0.0-beta.18/cli.ts
+$ deno install -qAn vr https://x.nest.land/velociraptor@1.0.0/cli.ts
 ```
 
-## Installing specific versions
+## Upgrading
 
-To install a specific version, provide a version tag after the `@`:
+To upgrade to the latest version run
 
 ```shell
-$ deno install -qAn vr https://deno.land/x/velociraptor@<VERSION>/cli.ts
+$ vr upgrade
 ```
 
-If you're updating/overwriting an existing installation add the `-f` flag.
+or, to install a specific version:
+
+```shell
+$ vr upgrade <version tag> 
+```
+
+> Requires vr >= 1.0.0
+
+### Upgrading using `deno install`
+
+If you're updating/overwriting an existing installation using `deno install`, add the `-f` flag.
 
 ## Usage without installing
 

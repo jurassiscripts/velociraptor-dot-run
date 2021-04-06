@@ -1,6 +1,7 @@
 ---
 title: Composite scripts
 group: guides
+description: How to create serial and concurrent script flows
 ---
 # Composite scripts
 

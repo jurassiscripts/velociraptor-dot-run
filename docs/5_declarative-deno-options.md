@@ -1,6 +1,7 @@
 ---
 title: Deno CLI options
 group: guides
+description: Set Deno CLI options in script config files
 ---
 # Setting Deno CLI options
 

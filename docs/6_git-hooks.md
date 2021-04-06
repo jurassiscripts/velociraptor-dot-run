@@ -1,6 +1,7 @@
 ---
 title: Git Hooks
 group: guides
+description: How to link your vr scripts to git hooks
 ---
 # Git Hooks
 

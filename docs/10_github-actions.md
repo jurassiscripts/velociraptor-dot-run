@@ -1,6 +1,7 @@
 ---
 title: GitHub Actions
 group: guides
+description: How to use Velociraptor in GitHub Actions
 ---
 # Use Velociraptor in your GitHub Actions
 

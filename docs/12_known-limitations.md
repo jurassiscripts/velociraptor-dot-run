@@ -13,8 +13,9 @@ scripts:
   test: deno run "a filename with spaces.ts"
 ```
 
-This is caused by how Rust's `std::Command` (used by `Deno.run()`) escapes cli arguments, see
-[here](https://github.com/rust-lang/rust/issues/29494). For this reason the default shell on Windows is Powershell.
+This is caused by Rust's `std::Command` escaping strategy (used by `Deno.run()`), see
+[here](https://github.com/rust-lang/rust/issues/29494). For this reason, when possible, the default shell on Windows is
+set to PowerShell.
 
 ## Custom executable names
 

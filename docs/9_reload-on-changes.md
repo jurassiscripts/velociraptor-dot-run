@@ -1,6 +1,7 @@
 ---
 title: Reloading on file changes
 group: guides
+description: How to automatically restart Deno scripts on file changes
 ---
 # Reloading on file changes
 

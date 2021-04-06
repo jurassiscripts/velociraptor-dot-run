@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ title }}{% if url != '/' %} | Velociraptor{% endif %}</title>
+  <title>{{ title }}{% if url != '/' %} | {{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if url != '/' %}{{ description }}{% else %}{{ site.description }}{% endif %}">
 
   <link rel="icon" href="{{ '/images/favicon.png' | url }}">
   <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">

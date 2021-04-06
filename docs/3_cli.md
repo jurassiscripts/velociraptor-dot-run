@@ -1,11 +1,11 @@
 ---
 title: CLI
 group: getting-started
+description: Velociraptor CLI commands explained
 ---
 # CLI
 
-Velociraptor exposes a CLI under the `vr` command, here's an overview of the main commands (run `vr --help` or
-`vr <command> --help` to get help in the CLI).
+Here's an overview of `vr`'s main commands (run `vr --help` or `vr <command> --help` to get help in the CLI).
 
 ## Listing scripts
 
@@ -79,7 +79,11 @@ $ ./bin/start [ARGS]...
 
 ## Shell scripting
 
-Like in `npm` scripts, vr commands are executed inside a shell. The shell is determined by the `SHELL` env variable on Unix-like systems and by `ComSpec` on Windows, with respectively `sh` and `cmd.exe` as fallback values. To customize the shell without changing your default shell env variables you can use the `VR_SHELL` variable (a full path is required).
+Like in `npm` scripts, vr commands are executed inside a shell. On Unix-like systems the shell is determined by the
+`SHELL` env variable (with `sh` as fallback); on Windows `PowerShell` is used by default (see
+[Cmd.exe and quotes](/docs/known-limitations#cmd.exe-and-quotes)) with the `ComSpec` env variable and `cmd.exe` as
+fallback values. To customize the shell without changing your default shell env variables you can use the `VR_SHELL`
+variable (a full path is required).
 
 The shell requirements are pretty much the same as [node's](https://nodejs.org/api/child_process.html#child_process_shell_requirements).
 

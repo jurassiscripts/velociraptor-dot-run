@@ -1,6 +1,7 @@
 ---
 title: Environment variables
 group: guides
+description: Manage env variables directly from your script config files
 ---
 # Environment variables
 

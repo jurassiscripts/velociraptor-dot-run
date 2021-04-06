@@ -1,6 +1,7 @@
 ---
 title: Configuration
 group: guides
+description: How to configure Velociraptor scripts
 ---
 # Configuration
 
