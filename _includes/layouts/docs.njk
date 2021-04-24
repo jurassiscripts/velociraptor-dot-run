@@ -45,7 +45,7 @@ scripts:
       <ul class="list-none p-0 flex">
         {%- set previousPost = search.previousPage(url, 'type=docs') %}
         {%- if previousPost %}
-          <li class="mr-auto">
+          <li class="mr-auto my-0">
             <a
               class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
               href="{{ previousPost.data.url | url }}"
@@ -63,7 +63,7 @@ scripts:
 
         {%- set nextPost = search.nextPage(url, 'type=docs') %}
         {%- if nextPost %}
-          <li class="ml-auto">
+          <li class="ml-auto my-0">
             <a
               class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
               href="{{ nextPost.data.url | url }}"
