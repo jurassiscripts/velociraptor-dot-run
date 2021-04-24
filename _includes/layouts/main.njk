@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{{ title }}{% if url != '/' %} | {{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if url != '/' %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:image" content="{{ '/images/cover.png' | url }}">
+  <meta name="twitter:card" content="{{ '/images/cover.png' | url }}">
 
   <link rel="icon" href="{{ '/images/favicon.png' | url }}">
   <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">

@@ -1,2 +1,2 @@
 title: Velociraptor
-description: The npm-style script runner for Deno
+description: Velociraptor is an npm-style script runner for Deno. It comes with out-of-the-box support for declarative Deno options, env vars, concurrency and git hooks.
