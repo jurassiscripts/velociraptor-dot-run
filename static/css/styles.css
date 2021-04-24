@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 
+html {
+  scroll-padding-top: 64px;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   @apply text-gray-600 leading-normal break-words;
