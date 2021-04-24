@@ -1,9 +1,13 @@
-import lume from 'https://deno.land/x/lume@v0.16.3/mod.js';
+import lume from 'https://deno.land/x/lume@v0.18.0/mod.js';
+import date from 'https://deno.land/x/lume@v0.18.0/plugins/date.js';
 import markdownItAnchor from 'https://jspm.dev/markdown-it-anchor';
 import cheerio from 'https://jspm.dev/cheerio';
 
-const site = lume();
+const site = lume({
+  location: new URL("https://velociraptor.run"),
+});
 
+site.use(date());
 site.copy('static', '');
 
 site.filter('groups', items => items.reduce((grouped, item) => {
