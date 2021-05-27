@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: denolib/setup-deno@v2
       - uses: jurassiscripts/setup-velociraptor@master
+      - run: deno install --unstable -f -A https://deno.land/x/lume@v0.18.0/cli.js
       - run: vr build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
