@@ -228,4 +228,8 @@ article h3:hover > .header-anchor {
   height: calc(100vh - 14em);
 }
 
+.max-w-xxs {
+  max-width: 14rem;
+}
+
 @tailwind utilities;

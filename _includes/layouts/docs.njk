@@ -11,6 +11,7 @@ scripts:
 <div class="main flex pt-6">
 
   <nav id="menu" class="sidebar">
+
     <div class="md:sticky">
       <ul class="scroll-wrapper -mx-2">
         {% set groupsPages = search.pages('type=docs') | groups %}
@@ -32,6 +33,18 @@ scripts:
             </ul>
           </li>
         {% endfor %}
+
+
+        <li class="block md:hidden px-2 text-lg hover:text-gray-600 transition-colors duration-300 border-t flex pt-4 mt-4">
+          <a href="https://github.com/jurassiscripts/velociraptor" target="_blank" class="mr-4">
+            <span class="sr-only">Velociraptor on GitHub</span>
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://discord.gg/M5K7TBd" target="_blank">
+            <span class="sr-only">Velociraptor on Discord</span>
+            <i class="fab fa-discord"></i>
+          </a>
+        </li>
 
       </ul>
     </div>

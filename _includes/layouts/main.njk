@@ -16,6 +16,7 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
   <script src="https://kit.fontawesome.com/b6a3908e9d.js" crossorigin="anonymous"></script>
   {% for script in scripts %}
     <script defer src="{{ ('/js/' + script) | url }}"></script>
@@ -34,12 +35,18 @@
           <i class="fas fa-times" aria-hidden="true"></i>
         </button>
       {% endif %}
-      <a href="/" class="mr-auto flex items-center">
+      <a href="/" class="mr-auto flex items-center flex-shrink-0">
         <img src="{{ '/images/vr-logo.svg' | url }}" alt="Velociraptor Logo" class="h-8 mr-2">
         <span class="md:block hidden text-gray-500 text-xl font-bold font-headings">Velociraptor</span>
       </a>
-      <nav>
-        <ul class="list-none flex items-center">
+      {% if url != '/' %}
+        <div class="max-w-xxs mx-4">
+          <label class="sr-only" for="searchInput">Search</label>
+          <input type="search" id="searchInput" placeholder="Search" class="border rounded-2xl bg-white bg-opacity-60 px-4 py-1 focus:outline-none focus:ring-2 w-full">
+        </div>
+      {% endif %}
+      <nav class="hidden md:block">
+        <ul class="flex items-center">
           <li class="mr-3 hover:text-gray-600 transition-colors duration-300"><a href="/docs">Docs</a></li>
           <li class="mr-3 text-lg hover:text-gray-600 transition-colors duration-300">
             <a href="https://github.com/jurassiscripts/velociraptor" target="_blank">
@@ -67,5 +74,15 @@
       <span class="text-sm text-gray-400">&copy; 2021 <a href="https://github.com/jurassiscripts" target="_blank">JurassiScripts</a></span>
     </div>
   </footer>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+  <script type="text/javascript">
+    docsearch({
+      apiKey: 'c7ef3621e63af5836d307b9ffd2648ba',
+      indexName: 'velociraptor',
+      inputSelector: '#searchInput',
+      debug: false,
+    });
+  </script>
 </body>
 </html>
