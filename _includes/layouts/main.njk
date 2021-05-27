@@ -42,10 +42,10 @@
       {% if url != '/' %}
         <div class="max-w-xxs mx-4">
           <label class="sr-only" for="searchInput">Search</label>
-          <input type="search" id="searchInput" placeholder="Search" class="border rounded-2xl bg-white bg-opacity-60 px-4 py-1 focus:outline-none focus:ring-2 w-full">
+          <input type="search" id="searchInput" placeholder="Search" class="border rounded-2xl bg-white bg-opacity-60 px-4 py-1 focus:outline-none focus:ring-2 w-full appearance-none">
         </div>
       {% endif %}
-      <nav class="hidden md:block">
+      <nav {% if url != '/' %}class="hidden md:block"{% endif %}>
         <ul class="flex items-center">
           <li class="mr-3 hover:text-gray-600 transition-colors duration-300"><a href="/docs">Docs</a></li>
           <li class="mr-3 text-lg hover:text-gray-600 transition-colors duration-300">
