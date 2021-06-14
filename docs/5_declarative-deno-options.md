@@ -48,8 +48,6 @@ scripts:
     imap: importmap.json
 ```
 
-> 🧪 Import maps are currently marked as unstable so the `--unstable` flag must be provided (see [other boolean flags](#other-boolean-flags)).
-
 ## Inspect
 
 `inspect` and `inspectBrk` correspond to the `--inspect` and `--inspect-brk` options.
