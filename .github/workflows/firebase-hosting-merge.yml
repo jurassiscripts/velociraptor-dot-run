@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: denoland/setup-deno@v1
-      - uses: jurassiscripts/setup-velociraptor@master
-      - run: deno install --unstable -f -A https://deno.land/x/lume@v0.18.0/cli.js
+      - uses: jurassiscripts/setup-velociraptor@v1
+      - run: deno install --unstable -f -A https://deno.land/x/lume@v1.0.1/cli.ts
       - run: vr build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
