@@ -44,13 +44,12 @@ site.filter('toc', content => {
   return toc;
 });
 
-site.engines.get('.markdown')
-  .engine
-  .use(markdownItAnchor, {
-    permalink: true,
-    permalinkBefore: true,
-    permalinkSymbol: '#',
-    permalinkSpace: false,
-  });
+site.data('vrVersion', () => {
+  return fetch('https://api.github.com/repos/jurassiscripts/velociraptor/releases/latest')
+    .then(r => r.json())
+    .then(r => r.name);
+});
+
+site.filter('await', promise => promise, true);
 
 export default site;

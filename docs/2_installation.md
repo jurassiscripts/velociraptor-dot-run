@@ -2,7 +2,10 @@
 title: Installation
 group: getting-started
 description: How to install Velociraptor
+templateEngine: njk,md
 ---
+{% set version = vrVersion() | await %}
+
 # Installation
 
 In order to install Velociraptor, you'll need a recent version of <a href="https://deno.land" target="_blank">Deno</a>.
@@ -10,13 +13,13 @@ In order to install Velociraptor, you'll need a recent version of <a href="https
 ## Installing from 🦕 [deno.land](https://deno.land/x/velociraptor)
 
 ```shell
-$ deno install -qAn vr https://deno.land/x/velociraptor@1.0.0/cli.ts
+$ deno install -qAn vr https://deno.land/x/velociraptor@{{ version }}/cli.ts
 ```
 
 ## Installing from 🥚 [nest.land](https://nest.land/package/velociraptor)
 
 ```shell
-$ deno install -qAn vr https://x.nest.land/velociraptor@1.0.0/cli.ts
+$ deno install -qAn vr https://x.nest.land/velociraptor@{{ version }}/cli.ts
 ```
 
 ## Upgrading
@@ -30,7 +33,7 @@ $ vr upgrade
 or, to install a specific version:
 
 ```shell
-$ vr upgrade <version tag> 
+$ vr upgrade <version tag>
 ```
 
 > Requires vr >= 1.0.0
