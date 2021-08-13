@@ -1,13 +1,26 @@
-import lume from 'https://deno.land/x/lume@v0.18.0/mod.js';
-import date from 'https://deno.land/x/lume@v0.18.0/plugins/date.js';
+import lume from 'lume/mod.ts';
+import date from 'lume/plugins/date.ts';
+import codeHighlight from 'lume/plugins/code_highlight.ts';
 import markdownItAnchor from 'https://jspm.dev/markdown-it-anchor';
 import cheerio from 'https://jspm.dev/cheerio';
 
 const site = lume({
   location: new URL("https://velociraptor.run"),
+}, {
+  markdown: {
+    plugins: [
+      [markdownItAnchor, {
+        permalink: true,
+        permalinkBefore: true,
+        permalinkSymbol: '#',
+        permalinkSpace: false,
+      }],
+    ],
+  },
 });
 
 site.use(date());
+site.use(codeHighlight());
 site.copy('static', '');
 
 site.filter('groups', items => items.reduce((grouped, item) => {
