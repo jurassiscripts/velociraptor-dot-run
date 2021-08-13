@@ -8,6 +8,8 @@ description: How to link your vr scripts to git hooks
 
 With Velociraptor you can link your scripts to git hooks in order to easily share them with your teammates.
 
+> ℹ️ Git hooks currently only work in `sh`/`bash` and `zsh`. `fish` support is coming soon.
+
 ## Linking scripts to hooks
 
 To link one of your scripts to a particular git hook add a `gitHook` property to its definition:
