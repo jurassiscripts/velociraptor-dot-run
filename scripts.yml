@@ -5,7 +5,7 @@ scripts:
     cmd:
       pll:
         - lume --serve --port 3333
-        - vr build-styles
+        - vr build-styles --watch
 
   build:
     desc: Builds for production
@@ -17,7 +17,7 @@ scripts:
 
   build-styles:
     desc: Builds Tailwind styles
-    cmd: npx tailwindcss-cli@latest build static/css/styles.css -c ./tailwind.config.js -o ./_site/css/styles.css
+    cmd: npx --yes tailwindcss@2.2.7 -i static/css/styles.css -c ./tailwind.config.js -o ./_site/css/styles.css
 
   deploy:
     desc: Deploys to Firebase Hosting
