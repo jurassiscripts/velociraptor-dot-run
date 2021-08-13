@@ -2,7 +2,7 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-'on':
+on:
   push:
     branches:
       - main
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: denoland/setup-deno@v1
       - uses: jurassiscripts/setup-velociraptor@v1
-      - run: deno install --unstable -f -A https://deno.land/x/lume@v1.0.1/cli.ts
+      - run: deno install --unstable -fAn lume https://deno.land/x/lume@v1.0.1/ci.ts
       - run: vr build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
