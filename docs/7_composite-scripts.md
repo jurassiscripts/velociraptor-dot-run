@@ -9,7 +9,7 @@ With Velociraptor you can create serial and parallel scripts directly in your co
 
 ## Serial scripts
 
-Array of commands are executed serially:
+Arrays of commands are executed serially:
 
 ```yaml
 scripts:
