@@ -60,7 +60,7 @@ scripts:
         {%- if previousPost %}
           <li class="mr-auto my-0">
             <a
-              class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
+              class="group rounded flex items-center p-2 text-gray-300 transition-colors duration-300 outline-none"
               href="{{ previousPost.data.url | url }}"
               rel="prev">
               <i
@@ -78,7 +78,7 @@ scripts:
         {%- if nextPost %}
           <li class="ml-auto my-0">
             <a
-              class="group border rounded flex items-center p-2 text-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-300 outline-none"
+              class="group rounded flex items-center p-2 text-gray-300 transition-colors duration-300 outline-none"
               href="{{ nextPost.data.url | url }}"
               rel="prev">
               <div class="flex flex-col items-start mr-6">
@@ -97,7 +97,7 @@ scripts:
     {% set currentPage = search.pages('url=' + url)[0] %}
     {% if currentPage %}
     <div class="flex">
-      <a class="ml-auto text-gray-400 hover:text-gray-500 transition-colors duration-300" target="_blank" href="https:/github.com/jurassiscripts/velociraptor-dot-run/tree/main{{ currentPage.src.path + currentPage.src.ext }}"><i class="fab fa-github"></i> Edit this page</a>
+      <a class="ml-auto text-gray-400 hover:text-gray-500 transition-colors duration-300" target="_blank" href="https://github.com/jurassiscripts/velociraptor-dot-run/tree/main{{ currentPage.src.path + currentPage.src.ext }}"><i class="fab fa-github"></i> Edit this page</a>
     </div>
     {% endif %}
 

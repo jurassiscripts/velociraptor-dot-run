@@ -13,7 +13,6 @@
   {% for style in styles %}
     <link rel="stylesheet" href="{{ ('/css/' + style) | url }}"/>
   {% endfor %}
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
@@ -21,6 +20,17 @@
   {% for script in scripts %}
     <script defer src="{{ ('/js/' + script) | url }}"></script>
   {% endfor %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQEPZKHB8V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PQEPZKHB8V');
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+    });
+  </script>
 </head>
 <body>
   <header class="fixed top-0 z-20 w-full border-b border-gray-100 bg-blur text-gray-500">

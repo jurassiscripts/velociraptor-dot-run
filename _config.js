@@ -5,7 +5,7 @@ import markdownItAnchor from 'https://jspm.dev/markdown-it-anchor';
 import cheerio from 'https://jspm.dev/cheerio';
 
 const site = lume({
-  location: new URL("https://velociraptor.run"),
+  location: new URL('https://velociraptor.run'),
 }, {
   markdown: {
     plugins: [
