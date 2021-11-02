@@ -22,6 +22,8 @@ $ deno install -qAn vr https://deno.land/x/velociraptor@{{ version }}/cli.ts
 $ deno install -qAn vr https://x.nest.land/velociraptor@{{ version }}/cli.ts
 ```
 
+> ℹ️ You might have to [add the installation root to your path](https://deno.land/manual@v1.15.3/tools/script_installer#:~:text=These%20must%20be%20added%20to%20the%20path%20manually%20if%20required). 
+
 ## Upgrading
 
 To upgrade to the latest version run
