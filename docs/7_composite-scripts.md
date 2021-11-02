@@ -32,6 +32,13 @@ scripts:
     pll: # These commands are executed in parallel
       - deno run one.ts
       - deno run two.ts
+  
+  start-watch:
+    cmd:
+      pll:
+        - one.ts
+        - two.ts
+    watch: true
 ```
 
 ## Complex composite scripts
