@@ -5,8 +5,8 @@ description: How to configure Velociraptor scripts
 ---
 # Configuration
 
-Velociraptor accepts YAML, JSON or TypeScript configuration files. Config files can be named `scripts.<EXT>` or
-`velociraptor.<EXT>` where `EXT` is one of `yml`, `yaml`, `json` or `ts`.
+Velociraptor accepts YAML, JSON, TypeScript or JavaScript configuration files. Config files can be named `scripts.<EXT>` or
+`velociraptor.<EXT>` where `EXT` is one of `yml`, `yaml`, `json`, `ts`, `js` or `mjs`.
 
 ## Format
 
