@@ -39,13 +39,13 @@ scripts:
 
 ## Import maps
 
-Import maps are specified in `importmap`.
+Import maps are specified in `importMap`.
 
 ```yaml
 scripts:
   start:
     cmd: deno run --unstable server.ts
-    importmap: importmap.json
+    importMap: import_map.json
 ```
 
 ## Inspect
