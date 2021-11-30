@@ -5,7 +5,7 @@ description: How to use Velociraptor in GitHub Actions
 ---
 # Use Velociraptor in your GitHub Actions
 
-To use velociraptor in your GitHub Actions workflow include the `jurassiscripts/setup-velociraptor@v2` action:
+To use velociraptor in your GitHub Actions workflow include the [`jurassiscripts/setup-velociraptor@v2`](https://github.com/marketplace/actions/setup-velociraptor) action:
 
 ```yaml
 steps:
@@ -13,7 +13,7 @@ steps:
   - run: vr ...
 ```
 
-For convenience, `setup-velociraptor@v2` can automatically run [`actions/checkout@v2`](https://github.com/marketplace/actions/checkout) and [`denoland/setup-deno@1`](https://github.com/marketplace/actions/setup-deno) to make your workflow less verbose.
+For convenience, it can also automatically run [`actions/checkout@v2`](https://github.com/marketplace/actions/checkout) and [`denoland/setup-deno@1`](https://github.com/marketplace/actions/setup-deno) to make your workflow less verbose.
 
 It is however possible to disable this behaviour by passing `false` to `checkout` and/or `deno-version`:
 
