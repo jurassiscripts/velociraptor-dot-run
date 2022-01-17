@@ -24,6 +24,7 @@ scripts:
     cmd: server.ts
     allow: # or a map
       net: 127.0.0.1
+      read: true # allow all reads
 ```
 
 ## Tsconfig
