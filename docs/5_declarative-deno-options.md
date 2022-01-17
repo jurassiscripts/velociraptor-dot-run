@@ -27,15 +27,15 @@ scripts:
       read: true # allow all reads
 ```
 
-## Tsconfig
+## TS/Deno config file
 
-To specify a `tsconfig`, set the `tsconfig` property.
+Use the `config` property to specify a Deno config file or tsconfig (Deno's `--config` option).
 
 ```yaml
 scripts:
   start:
     cmd: server.ts
-    tsconfig: tsconfig.json
+    config: tsconfig.json
 ```
 
 ## Import maps
@@ -57,7 +57,7 @@ scripts:
 scripts:
   start:
     cmd: server.ts
-    inspect: 127.0.0.1:9229
+    inspect: 127.0.0.1:9229 # use inspect: true to apply the default settings
 ```
 
 ## Lockfile
