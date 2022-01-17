@@ -3,14 +3,20 @@ title: Configuration
 group: guides
 description: How to configure Velociraptor scripts
 ---
+
 # Configuration
 
-Velociraptor accepts YAML, JSON, TypeScript or JavaScript configuration files. Config files can be named `scripts.<EXT>` or
-`velociraptor.<EXT>` where `EXT` is one of `yml`, `yaml`, `json`, `ts`, `js` or `mjs`.
+Velociraptor accepts YAML, JSON, TypeScript or JavaScript configuration files. Config files can be named `scripts.<EXT>`
+or
+`velociraptor.<EXT>` where `EXT` is one of `yml`, `yaml`, `json`, `ts`, `js` or `mjs`
+.
+
+[Deno configuration files](https://deno.land/manual/getting_started/configuration_file) (`deno.json`/`deno.jsonc`) are
+supported as well: specify your config under the `velociraptor` key.
 
 ## Format
 
-In its simplest form, the scripts property behaves like in package.json: the keys are script names and the values are
+In its simplest form, the scripts mapping behaves like in package.json: the keys are script names and the values are
 command strings:
 
 ```yaml
@@ -67,4 +73,5 @@ More script object properties are detailed in the next guides.
 
 ## Config files reference
 
-See the complete config files reference [here](https://doc.deno.land/https/deno.land/x/velociraptor/src/scripts_config.ts). 
+See the complete config files
+reference [here](https://doc.deno.land/https/deno.land/x/velociraptor/src/scripts_config.ts). 
