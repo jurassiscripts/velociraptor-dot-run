@@ -15,7 +15,7 @@ code assistance for script configuration files (both `yaml` and `json`).
 To get code assistance in TypeScript config files, add a type to the default export:
 
 ```typescript
-import { ScriptsConfiguration } from "https://deno.land/x/velociraptor@1.0.0-beta.17/mod.ts";
+import { ScriptsConfiguration } from "https://deno.land/x/velociraptor@1.5.0/mod.ts";
 
 export default <ScriptsConfiguration>{
   scripts: {
