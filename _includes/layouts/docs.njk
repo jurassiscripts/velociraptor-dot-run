@@ -17,14 +17,14 @@ scripts:
         {% set groupsPages = search.pages('type=docs') | groups %}
         {% for group in groups %}
           <li {% if loop.index != 1 %}class="mt-8"{% endif %}>
-            <h5 class="px-2 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-gray-900">
+            <h5 class="px-2 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-tertiary">
               {{ group.title }}
             </h5>
             <ul>
               {% for docsPage in groupsPages[group.id] %}
                 <li>
                   <a
-                    class="p-2 transition-colors duration-200 block hover:text-gray-900 text-gray-500 rounded {% if url == docsPage.data.url %}text-blue-500 bg-blue-50 hover:text-blue-600{% endif %}"
+                    class="p-2 transition-colors duration-200 block rounded-md hover:text-blue-500 {% if url == docsPage.data.url %}text-primary bg-blue-50 dark:bg-gray-800{% else %}text-secondary{% endif %}"
                     href="{{ docsPage.data.url }}">
                     {{ docsPage.data.title }}
                   </a>
@@ -35,7 +35,7 @@ scripts:
         {% endfor %}
 
 
-        <li class="block md:hidden px-2 text-lg hover:text-gray-600 transition-colors duration-300 border-t flex pt-4 mt-4">
+        <li class="block md:hidden px-2 text-lg hover:text-primary transition-colors duration-300 border-t flex pt-4 mt-4">
           <a href="https://github.com/jurassiscripts/velociraptor" target="_blank" class="mr-4">
             <span class="sr-only">Velociraptor on GitHub</span>
             <i class="fab fa-github"></i>
@@ -54,13 +54,13 @@ scripts:
 
     {{ content | safe }}
 
-    <nav class="py-8 my-8 border-gray-200 border-t">
+    <nav class="py-8 mt-20 mb-8 dark:border-gray-300/10 border-t">
       <ul class="list-none p-0 flex">
         {%- set previousPost = search.previousPage(url, 'type=docs') %}
         {%- if previousPost %}
           <li class="mr-auto my-0">
             <a
-              class="group rounded flex items-center p-2 text-gray-300 transition-colors duration-300 outline-none"
+              class="group rounded flex items-center p-2 text-tertiary transition-colors duration-300 outline-none"
               href="{{ previousPost.data.url | url }}"
               rel="prev">
               <i
@@ -68,7 +68,7 @@ scripts:
               <div class="flex flex-col items-end">
                 <span
                   class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Prev</span>
-                <span class="text-gray-500">{{ previousPost.data.title }}</span>
+                <span class="text-secondary">{{ previousPost.data.title }}</span>
               </div>
             </a>
           </li>
@@ -78,13 +78,13 @@ scripts:
         {%- if nextPost %}
           <li class="ml-auto my-0">
             <a
-              class="group rounded flex items-center p-2 text-gray-300 transition-colors duration-300 outline-none"
+              class="group rounded flex items-center p-2 text-tertiary transition-colors duration-300 outline-none"
               href="{{ nextPost.data.url | url }}"
               rel="prev">
               <div class="flex flex-col items-start mr-6">
                 <span
                   class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Next</span>
-                <span class="text-gray-500">{{ nextPost.data.title }}</span>
+                <span class="text-secondary">{{ nextPost.data.title }}</span>
               </div>
               <i
                 class="fas fa-arrow-right group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
@@ -97,7 +97,7 @@ scripts:
     {% set currentPage = search.pages('url=' + url)[0] %}
     {% if currentPage %}
     <div class="flex">
-      <a class="ml-auto text-gray-400 hover:text-gray-500 transition-colors duration-300" target="_blank" href="https://github.com/jurassiscripts/velociraptor-dot-run/tree/main{{ currentPage.src.path + currentPage.src.ext }}"><i class="fab fa-github"></i> Edit this page</a>
+      <a class="ml-auto text-tertiary hover:text-secondary transition-colors duration-300" target="_blank" href="https://github.com/jurassiscripts/velociraptor-dot-run/tree/main{{ currentPage.src.path + currentPage.src.ext }}"><i class="fab fa-github"></i> Edit this page</a>
     </div>
     {% endif %}
 
@@ -106,15 +106,15 @@ scripts:
   <nav class="sidebar hidden md:block w-1/6 ml-8 pl-8">
     <div class="sticky">
       <div class="scroll-wrapper">
-        <h5 class="text-gray-900 uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
+        <h5 class="text-tertiary uppercase tracking-wide font-semibold mb-3 text-sm lg:text-xs">
           On this page
         </h5>
-        <ul class="sidebar-scroller text-gray-500">
+        <ul class="sidebar-scroller text-secondary">
           {% set toc = content | toc %}
           {% for h in toc %}
             <li{% if h.level > 1 %} class="ml-{{ (h.level - 1) * 2 }}"{% endif %}>
               <a href="#{{ h.anchor }}"
-                 class="block transform transition-colors duration-200 py-2 hover:text-gray-900">
+                 class="block transform transition-colors duration-200 py-2 hover:text-emphasis">
                 {{ h.text }}
               </a>
             </li>
