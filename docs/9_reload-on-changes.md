@@ -9,7 +9,7 @@ Use the `watch` property to watch for file changes and restart processes automat
 
 > 🧪 Unstable
 
-When set to true, the entrypoint and all local files the entrypoint(s) statically import(s) will be watched.
+When set to true, the entrypoint and all local files the entrypoint(s) static import(s) will be watched.
 
 ```yaml
 scripts:
